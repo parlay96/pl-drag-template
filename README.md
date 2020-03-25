@@ -16,6 +16,10 @@
 > 注意： 最好使用谷歌打开，点击保存按钮就是一串json数据，你可以吧这个数据拿到其他手机平台进行渲染啦。有问题就加群
 > 里面代码注释齐全，谁都看懂的哦
 
+> 在这个模板的基础上，你就可以实现类似凡科的模板（当然你还可以实现其他的类似模板）。如下图就是我们产品的模样
+
+> ![image](https://livelypeng.github.io/pl-drag-template/src/assets/shili.png)
+
 ## 项目目录
 ``` javascript
   src {
