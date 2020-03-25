@@ -1,0 +1,294 @@
+/**
+ 可视化编辑器的基础样式
+ */
+// editor画板入口
+.editor-pane {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #f0f0f0;
+  .editor-head {
+    height: 49px;
+    line-height: 49px;
+    border-bottom: 1px solid #eee;
+    font-size: 17px;
+    text-align: center;
+    background-color: white;
+    position: relative;
+  }
+
+  .editor-wrapper {
+    height: calc(100% - 50px - 50px);
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: -moz-calc(100% + 17px);
+    &::-webkit-scrollbar {
+      display: none !important;
+    }
+    .editor-wrapper-container {width: 100%;
+      .g_middlePlaceholder {
+        background: #f0f0f0;
+        color: #f0f0f0;
+        border: 1px solid #eef0fc;
+        height: 55px;
+        line-height: 55px;
+        text-align: center;
+      }
+      // 获取焦点的样式
+      .g_middlePlaceholder.gm_active {
+        border: 1px dashed @dh-color;
+        color: @dh-color;
+        background-color: rgba(65, 196, 181, 0.1);
+      }
+    }
+    .emptyPage {
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      .emptyPageBg {
+        background: url(../../../assets/bg.png) no-repeat;
+        width: 180px;
+        height: 220px;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        margin-top: -115px;
+        margin-left: -90px;
+      }
+      .emptyPageTip {
+        position: absolute;
+        top: 60%;
+        left: 18%;
+        font-size: 14px;
+        color: #666;
+      }
+      .addModuleBtn{
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        margin-left: -35px;
+        margin-top: -17px;
+        padding: 8px 23px;
+        background: #5874d8;
+        border-color: #5874d8;
+        color: #fff;
+      }
+      .pl_button {
+        display: inline-block;
+        box-sizing: border-box;
+        height: 34px;
+        padding: 0 13px;
+        border: 1px solid #e3e2e8;
+        cursor: pointer;
+        user-select: none;
+        border-radius: 2px;
+        outline: 0;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 0;
+        font-family: 微软雅黑;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .editor-nav {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-around;
+    .nav-item {
+      display: block;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      color: #666;
+      .nav-text {
+        max-width: 58px;
+        font-size: 12px;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+     .nav-icon-wrap {
+        width: 26px;
+        height: 26px;
+        font-size: 18px;
+        display: block;
+        margin: 3px auto 0;
+      }
+    }
+  }
+
+  .editor-pane-inner {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    padding: 20px;
+  }
+
+  .editorMain_content {
+    border-radius: 3px;
+    margin: 25px auto;
+    position: relative;
+    -webkit-box-shadow: 0 1px 2px rgba(150,150,150,.3);
+    box-shadow: 0 1px 2px rgba(150,150,150,.3);
+    // 容器的按钮区域，增删
+    .containerBtnArea {
+      width: 25px;
+      position: absolute;
+      top: 0;
+      right: -25px;
+      z-index: 1;
+    }
+  }
+
+  .page-preview-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+// 模板组件的基本样式
+.commonModule {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    border: 1px dashed @dh-color;
+    display: none;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    top: 0;
+    left: 0;
+  }
+  // 组件模块右上角的按钮区域
+  .tool-wrapper {
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    display: none;
+    right: 0;
+  }
+}
+// 获取焦点显示画板功能按钮区域
+.commonModule:hover {
+  .tool-wrapper {
+    display: block;
+  }
+}
+// 如果组件为选中状态，那么就隐藏画板功能按钮区域
+.editStatus.commonModule .tool-wrapper {
+  display: none !important;
+}
+// 显示边框
+.commonModule:hover:before {
+  display: inline-block;
+}
+// 如果组件为选中状态 显示边框
+.editStatus.commonModule:before {
+  display: inline-block;
+}
+// 如果是模板组件，不是画板组件就不能有边框线
+.borderNone.commonModule:before {
+  display: none;
+}
+
+// 容器的基本样式
+.pl-container {width: 100%;
+  .module-component-wrapper {
+    width: 100%;
+    position: relative;
+    &:before {
+      content: "";
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 1px dashed @dh-color;
+      z-index: 2;
+      display: none;
+      pointer-events: none; // 非常重要 https://developer.mozilla.org/zh-CN/docs/Web/CSS/pointer-events
+    }
+    // 无作用的布局，为了检测当前容器是否可以放置拖拽的元素
+    .module_editor {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 999;
+    }
+  }
+  // 获取焦点显示边框线
+  .module-component-wrapper:hover:before{
+    display: inline-block;
+  }
+  // 点击了容器显示边框线
+  .editStatus.module-component-wrapper:before {
+    display: inline-block;
+  }
+  // 如果我点击了容器里面的类型是模块的元素，module: true，那么容器的颜色改变且失去焦点显示容器边框
+  .moduleActive.module-component-wrapper:before {
+    border: 1px dashed @dh-color !important;
+    display: inline-block;
+  }
+  // 如果子节点被获取焦点，那么容器的颜色改变
+  .childHover.module-component-wrapper:before {
+    border: 1px dashed #555;
+  }
+  // 装载元素的画板
+  .module_bgContent_wrapper {
+    position: relative;width: 100%;
+    .packModulesContainer {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+    .emptyModule {
+      text-align: center;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      .emptyModuleText {
+        position: relative;
+        top: 20%;
+        color: #666;
+      }
+    }
+  }
+  .titles {border-bottom: 1px solid #f0f0f0;text-align: center;font-size: 15px;color: #353535;background-color: #fff;}
+}
+/*可读可写*/
+.read-write {
+  -webkit-user-modify: read-write;
+  -moz-user-modify: read-write;
+  user-modify: read-write;
+}
+/*只能读*/
+.read-only {
+  -webkit-user-modify:read-only;
+  -moz-user-modify:read-only;
+  user-modify:read-only;
+}
+// 拖动的圆点
+.edit-shape-point {
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border: 1px solid #59c7f9;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 1001;
+}
