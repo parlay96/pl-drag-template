@@ -22,13 +22,7 @@
 
 ## 友情链接
 
-#### - [uView 文档（超棒的移动跨端框架，文档详细，上手容易）](https://uviewui.com/)
-
-#### - [uView 开源地址（uView UI，是 uni-app 生态优秀的 UI 框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水）](https://github.com/YanxinNet/uView)
-
-#### **vue-admin-beautiful** —— [企业级、通用型中后台前端解决方案（基于vue/cli 4 最新版，同时支持电脑，手机，平板）](https://github.com/chuzhixin/vue-admin-beautiful)
-
-#### **vue-admin-beautiful** —— [在线演示](http://beautiful.panm.cn/vue-admin-beautiful/#/index)
+#### - [umy-ui流畅渲染表格万级数据](http://129.211.13.167/#/wel/component/ux-table-column-api)
 
 ## 项目目录
 ``` javascript
