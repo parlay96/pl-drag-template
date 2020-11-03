@@ -22,7 +22,7 @@
 
 ## 友情链接
 
-#### - [umy-ui流畅渲染表格万级数据](http://129.211.13.167/#/wel/component/ux-table-column-api)
+#### - [umy-ui流畅渲染表格万级数据](https://www.umyui.com)
 
 ## 项目目录
 ``` javascript
