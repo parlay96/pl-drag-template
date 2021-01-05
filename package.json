@@ -13,7 +13,7 @@
     "reinstall": "npm i --no-optional --registry=https://registry.npm.taobao.org"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "core-js": "^3.6.4",
     "crypto-js": "^3.1.9-1",
     "element-ui": "^2.13.0",
