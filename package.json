@@ -10,7 +10,7 @@
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js",
     "fix": "eslint --fix --ext .js,.vue src",
-    "reinstall": "npm i --no-optional --registry=https://registry.npm.taobao.org"
+    "reinstall": "npm i --no-optional --registry=https://registry.npmmirror.com"
   },
   "dependencies": {
     "axios": "^0.18.0",
