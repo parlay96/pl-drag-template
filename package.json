@@ -64,7 +64,7 @@
     "less-loader": "^4.1.0",
     "mini-css-extract-plugin": "^0.4.0",
     "mockjs": "^1.0.1-beta3",
-    "node-notifier": "^5.1.2",
+    "node-notifier": "^8.0.1",
     "optimize-css-assets-webpack-plugin": "^4.0.0",
     "ora": "^2.0.0",
     "portfinder": "^1.0.13",
